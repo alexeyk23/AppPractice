@@ -16,12 +16,13 @@ create table "User"  (
     "data_reg" date default to_date('00.00.0000', 'dd.dd.yyyy'),
     "Div_id" int
   );
+
+
 create table "Privileges"  (
     "Privileges_id" int  autoinc unique,
-    "Application_id" int not null,
     "Priv_Name" varchar (50)
   );
-create index "Application_id" on "SYSTEM"."Privileges";
+
 
 create table "Role_Privileges"  (
     "Privileges_id" int,
@@ -34,14 +35,20 @@ create table "Application"  (
   );
 
 create table "Company"  (
-    "Company_id" int autoinc unique not null,
+    "Company_id" int  autoinc unique not null,
     "Com_name" varchar (50)
   );
 
+  create table "Application_Privileges"  (
+    "Privileges_id" int,
+    "Application_id" int 
+  );
+  
+  
 create table "Division"  (
     "Company_id" int not null,
     "Div_name" varchar (50),
-    "Div_id" int autoinc unique not null
+    "Div_id" int  autoinc unique not null
   );
   alter table "User_Role" add foreign key ("Id_user") references "User"("Id_user");
 alter table "User_Role" add foreign key ("Role_id") references "Role"("Role_id");
@@ -49,11 +56,16 @@ alter table "User_Role" add foreign key ("Role_id") references "Role"("Role_id")
   alter table "Role" add primary key("Role_id");
 
 
+alter table "Application_Privileges" add foreign key ("Privileges_id") references "Privileges"("Privileges_id");
+alter table "Application_Privileges" add foreign key ("Application_id") references "Application"("Application_id");
+  
+  
+  
 alter table "User" add primary key("Id_user");
 alter table "User" add foreign key ("Div_id") references "Division"("Div_id");
   
   alter table "Privileges" add primary key("Privileges_id");
-alter table "Privileges" add foreign key ("Application_id") references "Application"("Application_id");
+
 
 alter table "Role_Privileges" add foreign key ("Privileges_id") references "Privileges"("Privileges_id");
 alter table "Role_Privileges" add foreign key ("Role_id") references "Role"("Role_id");
