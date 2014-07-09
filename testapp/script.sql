@@ -16,8 +16,6 @@ create table "User"  (
     "data_reg" date default to_date('00.00.0000', 'dd.dd.yyyy'),
     "Div_id" int
   );
-create index "Div_id" on "SYSTEM"."User";
-
 create table "Privileges"  (
     "Privileges_id" int  autoinc unique,
     "Application_id" int not null,
@@ -36,14 +34,14 @@ create table "Application"  (
   );
 
 create table "Company"  (
-    "Company_id" int unique not null,
+    "Company_id" int autoinc unique not null,
     "Com_name" varchar (50)
   );
 
 create table "Division"  (
     "Company_id" int not null,
     "Div_name" varchar (50),
-    "Div_id" int unique not null
+    "Div_id" int autoinc unique not null
   );
   alter table "User_Role" add foreign key ("Id_user") references "User"("Id_user");
 alter table "User_Role" add foreign key ("Role_id") references "Role"("Role_id");
