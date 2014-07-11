@@ -1,8 +1,8 @@
 package com.relex.practice.pojo;
 
-
+import javax.persistence.*;
 @Entity
-@Tabe(name="Privileges")
+@Table(name="Privileges")
 
 public class Privileges {
 	@Id

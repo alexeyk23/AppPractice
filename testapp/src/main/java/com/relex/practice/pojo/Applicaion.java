@@ -1,11 +1,15 @@
 package com.relex.practice.pojo;
 
+import java.util.Set;
+
+import javax.persistence.*;
+
 
 
 
 
 @Entity
-@Tabe(name="Application")
+@Table(name="Application")
 
 public class Application {
 	@Id
@@ -18,8 +22,8 @@ public class Application {
 	
 	@ManyToMany
 	@JoinTable(name="Application_Privileges",
-	joinColumns= {@joinColumns(name = "Application_Id")},
-	inverseJoinColumns={@JoinColumns(name = "Privileges_Id")}
+	joinColumns= {@JoinColumn(name = "Application_Id")},
+	inverseJoinColumns={@JoinColumn(name = "Privileges_Id")}
 	
 	private Set<Privileges> applications;
 
