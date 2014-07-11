@@ -1,5 +1,7 @@
 package com.relex.practice.pojo;
 
+import javax.persistence.*;
+
 @Entity
 @Table(name="Division")
 public class Division 
@@ -7,11 +9,10 @@ public class Division
 	@Id
 	@Column(name="Company_id")
 	private int compid;
-	@DivName
-	@Column(name="Div_name")
-	private String divName;
 	
-	@DivId
+	@Column(name="Div_name")
+	private String divName;	
+	
 	@Column(name="Div_id")
 	private int divID;
 	
