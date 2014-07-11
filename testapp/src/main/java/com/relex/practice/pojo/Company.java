@@ -10,7 +10,6 @@ public class Company
 	@Column(name="Company_id")
 	private int id;
 	
-	
 	@OneToMany(mappedBy="")
 	@Column (name="Com_name")
 	private String name;

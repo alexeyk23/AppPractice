@@ -23,7 +23,7 @@ public class Application {
 	@ManyToMany
 	@JoinTable(name="Application_Privileges",
 	joinColumns= {@JoinColumn(name = "Application_Id")},
-	inverseJoinColumns={@JoinColumn(name = "Privileges_Id")}
+	inverseJoinColumns={@JoinColumn(name = "Privileges_Id")})
 	
 	private Set<Privileges> applications;
 
