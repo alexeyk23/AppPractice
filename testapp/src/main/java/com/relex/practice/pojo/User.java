@@ -1,9 +1,6 @@
 package com.relex.practice.pojo;
 
 import java.util.Date;
-import javax.persistence.Column;
-import javax.persistence.Id;
-import org.hibernate.metamodel.relational.Schema.Name;
 
 
 
@@ -11,19 +8,19 @@ public class User {
 	@Id
 	@Column(name="Id_user")
 	private int id_user;
-	
+	@Name
 	@Column(name="Name")
 	private String name;
-
+	@Surname
 	@Column(name="Surname")
 	private String surname;
-	
+	@Mail
 	@Column(name="mail")
 	private String mail;
-	
+	@Data
 	@Column(name="data_reg")
 	private Date data;
-	
+	@DivId
 	@Column(name="Div_id")
 	private int div_id;
 	

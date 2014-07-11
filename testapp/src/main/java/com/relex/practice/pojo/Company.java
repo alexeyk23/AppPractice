@@ -8,8 +8,9 @@ public class Company
 {
 	@Id
 	@Column(name="Company_id")
-	private int id;	
+	private int id;
 	
+	@Name
 	@OneToMany(mappedBy="")
 	@Column (name="Com_name")
 	private String name;
