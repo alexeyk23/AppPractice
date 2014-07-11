@@ -1,0 +1,31 @@
+package com.relex.practice.pojo;
+import javax.persistence.*;
+@Entity
+@Table (name = "Role")
+public class Role {
+	@Id
+	@Column(name = "Role_id")
+	private int role_id;
+	@Column (name = "Role_name")
+	private String role_name; 
+	public int getId()
+	{
+		return role_id;
+	}
+	public String getName ()
+	{
+		return role_name;
+	}
+	public void setId (int id)
+	{
+		this.role_id = id;
+	}
+	public void setName (String name)
+	{
+		this.role_name = name;
+		
+	}
+	public Role() {
+	}
+	
+}
