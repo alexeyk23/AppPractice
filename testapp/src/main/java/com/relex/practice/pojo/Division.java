@@ -4,14 +4,14 @@ import javax.persistence.*;
 @Table(name="Division")
 public class Division 
 {
-	@Id
-	@Column(name="Company_id")
-	private int compid;
+	@ManyToOne
+	@JoinColumn(name="Company_id")
+	private Company company;
 	
 	@Column(name="Div_name")
 	private String divName;
 	
-	
+	@Id
 	@Column(name="Div_id")
 	private int divID;
 	
@@ -19,12 +19,12 @@ public class Division
 		
 	}
 
-	public int getCompid() {
-		return compid;
+	public Company getCompid() {
+		return company;
 	}
 
-	public void setCompid(int compid) {
-		this.compid = compid;
+	public void setCompid(Company company) {
+		this.company = company;
 	}
 
 	public String getDivName() {

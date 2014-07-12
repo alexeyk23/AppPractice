@@ -1,5 +1,7 @@
 package com.relex.practice.pojo;
 
+import java.util.Set;
+
 import javax.persistence.*;
 
 @Entity
@@ -7,12 +9,14 @@ import javax.persistence.*;
 public class Company 
 {
 	@Id
-	@Column(name="Company_id")
-	private int id;
+	@Column(name="Company_id")	
+	private int id;	
 	
-	@OneToMany(mappedBy="")
 	@Column (name="Com_name")
 	private String name;
+	
+	@OneToMany(mappedBy="company")
+	private Set<Division> divs;
 	
 	public Company(){}
 	

@@ -3,11 +3,6 @@ package com.relex.practice.pojo;
 import java.util.Set;
 
 import javax.persistence.*;
-
-
-
-
-
 @Entity
 @Table(name="Application")
 
@@ -17,17 +12,23 @@ public class Application {
 	private int id;
 	
 	@Column(name="App_Name")
-	private String name;
-	
+	private String name;	
 	
 	@ManyToMany
 	@JoinTable(name="Application_Privileges",
 	joinColumns= {@JoinColumn(name = "Application_Id")},
-	inverseJoinColumns={@JoinColumn(name = "Privileges_Id")})
-	
+	inverseJoinColumns={@JoinColumn(name = "Privileges_Id")})	
 	private Set<Privileges> applications;
 
 
+
+public Set<Privileges> getApplications() {
+		return applications;
+	}
+
+	public void setApplications(Set<Privileges> applications) {
+		this.applications = applications;
+	}
 
 public Application(){};
 

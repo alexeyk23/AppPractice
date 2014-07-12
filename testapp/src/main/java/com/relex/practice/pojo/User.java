@@ -1,12 +1,14 @@
 package com.relex.practice.pojo;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.*;
 
 public class User {
 	@Id
-	@Column(name="Id_user")
+	@Column(name="Id_user")	
 	private int id_user;
 	
 	@Column(name="Name")
@@ -22,8 +24,22 @@ public class User {
 	private Date data;
 	
 	@Column(name="Div_id")
+	@ManyToOne
+	@JoinColumn(name ="Div_id")
 	private int div_id;
 	
+	@ManyToMany
+	@JoinTable(name = "User_role",
+		joinColumns =@JoinColumn(name= "Id_user"),
+		inverseJoinColumns =@JoinColumn(name= "Role_id"))
+	private Set<Role> roles = new HashSet<>();
+	
+	public Set<Role> getRoles() {
+		return roles;
+	}
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
+	}
 	public int getId_user() {
 		return id_user;
 	}
