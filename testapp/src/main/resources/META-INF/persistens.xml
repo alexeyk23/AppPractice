@@ -5,7 +5,7 @@
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		
 		<properties>		
-			<property name="hibernate.dialect" value="com.METAINF.LinterDialect" />			
+			<property name="hibernate.dialect" value="com.relex.practice.util.LinterDialect" />			
 			<property name="hibernate.connection.driver_class" value="com.relx.jdbc.LinterDriver" />
 			<property name="hibernate.connection.url"
 				value="jdbc:linter:linapid:localhost:1070:local" />
