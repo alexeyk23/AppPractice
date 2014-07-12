@@ -19,7 +19,7 @@ public class Privileges
 	private Set<Application> applicat = new HashSet<Application>();                                                   
 	                   
 	@ManyToMany(mappedBy="privileges")
-	private Set<Role> roles = new HashSet<>();
+	private Set<Role> roles = new HashSet<Role>();
 	
 	public Set<Role> getRoles() {
 		return roles;

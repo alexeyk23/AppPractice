@@ -32,7 +32,7 @@ public class User {
 	@JoinTable(name = "User_role",
 		joinColumns =@JoinColumn(name= "Id_user"),
 		inverseJoinColumns =@JoinColumn(name= "Role_id"))
-	private Set<Role> roles = new HashSet<>();
+	private Set<Role> roles = new HashSet<Role>();
 	
 	public Set<Role> getRoles() {
 		return roles;

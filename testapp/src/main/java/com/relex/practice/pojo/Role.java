@@ -15,13 +15,13 @@ public class Role {
 	private String role_name;
 	
 	@ManyToMany(mappedBy="roles")
-	private Set<User> users = new HashSet<>();
+	private Set<User> users;
 	
 	@ManyToMany
 	@JoinTable(name = "Role_privileges",
 	joinColumns =@JoinColumn(name= "Role_id"),
 	inverseJoinColumns =@JoinColumn(name= "Privileges_id"))
-	private Set<Privileges> privileges = new HashSet<>();
+	private Set<Privileges> privileges;
 	
 	public Set<User> getUsers() {
 		return users;
@@ -47,6 +47,8 @@ public class Role {
 		
 	}
 	public Role() {
+            this.privileges = new HashSet<Privileges>();
+            this.users = new HashSet<User>();
 	}
 	
 }
