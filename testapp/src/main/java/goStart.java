@@ -23,6 +23,7 @@ public class goStart {
 		
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("PTTest");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
+		EntityManager
 		entityManager.getTransaction().begin();
 		Company comp = new Company();
 		comp.setName("PIROG");
