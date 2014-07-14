@@ -5,33 +5,34 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.*;
-
+@Entity
+@Table(name="USER")
 public class User {
 	@Id
-	@Column(name="Id_user")	
+	@Column(name="USER_ID")	
 	private int id_user;
 	
-	@Column(name="Name")
+	@Column(name="NAME")
 	private String name;
 	
-	@Column(name="Surname")
+	@Column(name="SURNAME")
 	private String surname;
 	
-	@Column(name="mail")
+	@Column(name="MAIL")
 	private String mail;
 	
-	@Column(name="data_reg")
+	@Column(name="DATAREG")
 	private Date data;
 	
-	@Column(name="Div_id")
+	@Column(name="DIVISION_ID")
 	@ManyToOne
-	@JoinColumn(name ="Div_id")
+	@JoinColumn(name ="DIVISION_ID")
 	private int div_id;
 	
 	@ManyToMany
-	@JoinTable(name = "User_role",
-		joinColumns =@JoinColumn(name= "Id_user"),
-		inverseJoinColumns =@JoinColumn(name= "Role_id"))
+	@JoinTable(name = "USER_ROLE",
+		joinColumns =@JoinColumn(name= "USER_ID"),
+		inverseJoinColumns =@JoinColumn(name= "ROLE_ID"))
 	private Set<Role> roles = new HashSet<Role>();
 	
 	public Set<Role> getRoles() {

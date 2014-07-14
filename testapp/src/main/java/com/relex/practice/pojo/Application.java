@@ -4,20 +4,20 @@ import java.util.Set;
 
 import javax.persistence.*;
 @Entity
-@Table(name="Application")
+@Table(name="APPLICATION")
 
 public class Application {
 	@Id
-	@Column(name= "Application_Id")
+	@Column(name= "APPLICATION_ID")
 	private int id;
 	
-	@Column(name="App_Name")
+	@Column(name="NAME")
 	private String name;	
 	
 	@ManyToMany
-	@JoinTable(name="Application_Privileges",
-	joinColumns= {@JoinColumn(name = "Application_Id")},
-	inverseJoinColumns={@JoinColumn(name = "Privileges_Id")})	
+	@JoinTable(name="APPLICATION_PRIVILEGES",
+	joinColumns= {@JoinColumn(name = "APPLICATION_ID")},
+	inverseJoinColumns={@JoinColumn(name = "PRIVILEGES_ID")})	
 	private Set<Privileges> applications;
 
 

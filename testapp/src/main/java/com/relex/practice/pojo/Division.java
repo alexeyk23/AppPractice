@@ -1,18 +1,18 @@
 package com.relex.practice.pojo;
 import javax.persistence.*;
 @Entity
-@Table(name="Division")
+@Table(name="DIVISION")
 public class Division 
 {
 	@ManyToOne
-	@JoinColumn(name="Company_id")
+	@JoinColumn(name="COMPANY_ID")
 	private Company company;
 	
-	@Column(name="Div_name")
+	@Column(name="DIVISION_NAME")
 	private String divName;
 	
 	@Id
-	@Column(name="Div_id")
+	@Column(name="DIVISION_ID")
 	private int divID;
 	
 	public Division() {

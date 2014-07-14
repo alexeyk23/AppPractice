@@ -5,14 +5,14 @@ import java.util.Set;
 import javax.persistence.*;
 
 @Entity
-@Table(name="Company")
+@Table(name="COMPANY")
 public class Company 
 {
 	@Id
-	@Column(name="Company_id")	
+	@Column(name="COMPANY_ID")	
 	private int id;	
 	
-	@Column (name="Com_name")
+	@Column (name="COMPANY_NAME")
 	private String name;
 	
 	@OneToMany(mappedBy="company")

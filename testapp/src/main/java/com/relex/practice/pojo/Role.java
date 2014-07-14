@@ -5,22 +5,22 @@ import java.util.Set;
 import javax.persistence.*;
 
 @Entity
-@Table (name = "Role")
+@Table (name = "ROLE")
 public class Role {
 	@Id
-	@Column(name = "Role_id")
+	@Column(name = "ROLE_ID")
 	private int role_id;
 	
-	@Column (name = "Role_name")
+	@Column (name = "NAME")
 	private String role_name;
 	
 	@ManyToMany(mappedBy="roles")
 	private Set<User> users;
 	
 	@ManyToMany
-	@JoinTable(name = "Role_privileges",
-	joinColumns =@JoinColumn(name= "Role_id"),
-	inverseJoinColumns =@JoinColumn(name= "Privileges_id"))
+	@JoinTable(name = "ROLE_PRIVILEGES",
+	joinColumns =@JoinColumn(name= "ROLE_ID"),
+	inverseJoinColumns =@JoinColumn(name= "PRIVILEGES_ID"))
 	private Set<Privileges> privileges;
 	
 	public Set<User> getUsers() {
