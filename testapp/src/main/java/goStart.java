@@ -5,6 +5,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 
+import javax.persistence.PersistenceContext;
 import javax.persistence.spi.PersistenceProvider;
 
 import org.hibernate.Hibernate;
@@ -20,10 +21,10 @@ public class goStart {
 
 	public static void main(String[] args) {
 	         //  System.out.println(System.getProperty("java.class.path").replace(';', '\n'));
-		
+
+		EntityManager entityManager;
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("PTTest");
-		EntityManager entityManager = entityManagerFactory.createEntityManager();
-		EntityManager
+		entityManager = entityManagerFactory.createEntityManager();
 		entityManager.getTransaction().begin();
 		Company comp = new Company();
 		comp.setName("PIROG");
